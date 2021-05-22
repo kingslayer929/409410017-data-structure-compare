@@ -35,8 +35,6 @@ int main(int argc, char **argv){
         else error(argv[0]);
     }else error(argv[0]);
 
-    
-
     //determine which data structure should do
     int LinkedList = 0, Array = 0, SortedArray = 0, BST = 0, Hash = 0;
     for (int i = 5; i < argc; i++){
@@ -175,7 +173,6 @@ int main(int argc, char **argv){
     // hash
     if(Hash){
         hash h;
-        list *find;
 
         gettimeofday(&start, NULL);
         H_init(&h);
@@ -187,7 +184,7 @@ int main(int argc, char **argv){
 
         gettimeofday(&start, NULL);
         for (int i = 0; i < M; i++){
-            find = H_find(&h, query[i]);
+            H_find(&h, query[i]);
         }
         gettimeofday(&end, NULL);
         query_time = 1000000 * (end.tv_sec - start.tv_sec) + (end.tv_usec - start.tv_usec);

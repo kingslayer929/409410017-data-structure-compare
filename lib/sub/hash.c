@@ -6,9 +6,10 @@ typedef struct hash hash;
 
 struct hash{
     list **head;
+    list *find;
 };
 
-int hash65(int key){
+int hashmod(int key){
     return key % MAX_HASH;
 }
 
@@ -20,11 +21,11 @@ void H_init(hash *h){
 }
 
 void H_insert(hash *h, int key){
-    int r = hash65(key);
+    int r = hashmod(key);
     L_insert(&h->head[r], key);
 }
 
-list *H_find(hash *h, int key){
-    int r = hash65(key);
-    return L_find(h->head[r], key);
+void H_find(hash *h, int key){
+    int r = hashmod(key);
+    h->find =  L_find(h->head[r], key);
 }
