@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "../list.h"
 #define MAX_HASH 1000000
 typedef struct hash hash;
