@@ -1,6 +1,4 @@
-#ifndef _LIST_H
 #include "../list.h"
-#endif
 #define MAX_HASH 1000000
 typedef struct hash hash;
 
